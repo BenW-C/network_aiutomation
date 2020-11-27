@@ -1,0 +1,15 @@
+! Generated Configuration
+interface {{ interface }}
+    description Link to {{ hostname }} for {{ purpose }}
+    switchport
+    {% if vlan == "trunk" -%}
+    switchport mode trunk
+    {%else -%}
+    switchport mode access
+    switchport access vlan {{ vlan }}
+    spanning-tree portfast
+    {% endif -%}
+    no shutdown
+    exit
+
+ 

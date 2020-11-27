@@ -1,0 +1,19 @@
+
+enable
+configure terminal
+no ip domain-lookup
+enable secret {{ secret }}
+hostname {{ hostname }}
+username {{ username }} secret {{ password }}
+ip domain-name {{ domain }}
+crypto key generate rsa modulus {{ modulus }}
+ip ssh version 2
+line vty 0 15
+transport input {{ supported }}
+login {{ login }}
+line console 0
+logging synchronous
+exit
+interface vlan {{ management }}
+ip address {{ address }} {{ mask }}
+no shutdown

@@ -1,0 +1,2 @@
+Address,Device,SSH,Username,Password,Secret
+192.168.0.1,cisco_ios,22,ben,fietsband,fietsband
